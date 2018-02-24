@@ -31,13 +31,21 @@
 .navIcons svg, .navIcons button {
   color: #FFFFFF !important; }
 
+.navIcons button svg {
+  fill: #FFFFFF !important; }
+
 #navbarFull {
   display: none !important; }
 
 #navbarShort {
   display: flex !important; }
 
-@media all and (min-width: 610px) {
+span[role=menuitem] svg {
+  position: relative;
+  top: 5px;
+  margin: 0 5px; }
+
+@media all and (min-width: 700px) {
   #navbarFull {
     display: flex !important; }
   #navbarShort {

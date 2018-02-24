@@ -2,6 +2,8 @@ import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {AppBar, Drawer, FlatButton, IconButton, MenuItem, SvgIcon} from 'material-ui';
 import ActionHome from 'material-ui/svg-icons/action/home';
+import ActionWork from 'material-ui/svg-icons/action/work';
+import CommunicationContacts from 'material-ui/svg-icons/communication/contacts';
 import logo from '../assets/thinking.svg';
 import '../styles/Home.css';
 
@@ -19,9 +21,9 @@ const LinkedInIcon = (props) => (
 
 const RightIcons = () => (
     <div className="navIcons">
-        <FlatButton label="Home" />
-        <FlatButton label="Projects" />
-        <FlatButton label="Contact" />
+        <FlatButton label="Home" icon={<ActionHome/>} />
+        <FlatButton label="Projects" icon={<ActionWork/>} />
+        <FlatButton label="Contact" icon={<CommunicationContacts/>} />
         <IconButton href="https://github.com/irsanarisandy">
             <GitHubIcon />
         </IconButton>
@@ -52,9 +54,15 @@ class CustomNavbar extends React.Component {
             <div>
                 <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
                     <h3>Please Hire Me</h3>
-                    <MenuItem onClick={this.handleClose}>Home</MenuItem>
-                    <MenuItem onClick={this.handleClose}>Projects</MenuItem>
-                    <MenuItem onClick={this.handleClose}>Contacts</MenuItem>
+                    <MenuItem onClick={this.handleClose}>
+                        <ActionHome/><span>Home</span>
+                    </MenuItem>
+                    <MenuItem onClick={this.handleClose}>
+                        <ActionWork/><span>Projects</span>
+                    </MenuItem>
+                    <MenuItem onClick={this.handleClose}>
+                        <CommunicationContacts/><span>Contacts</span>
+                    </MenuItem>
                     <IconButton href="https://github.com/irsanarisandy">
                         <GitHubIcon />
                     </IconButton>
@@ -85,7 +93,6 @@ export default class App extends React.Component {
                 <p className="App-intro">
                     Future Software/Web Developer, dank meme-lord
                 </p>
-                <ActionHome/>
             </div>
             </MuiThemeProvider>
         );
