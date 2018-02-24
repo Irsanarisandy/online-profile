@@ -23,10 +23,22 @@
   to {
     transform: rotate(360deg); } }
 
-#navbar {
+.navbar {
   background-color: #006097 !important; }
-  #navbar h1 {
+  .navbar h1 {
     text-align: left; }
 
 .navIcons svg, .navIcons button {
   color: #FFFFFF !important; }
+
+#navbarFull {
+  display: none !important; }
+
+#navbarShort {
+  display: flex !important; }
+
+@media all and (min-width: 610px) {
+  #navbarFull {
+    display: flex !important; }
+  #navbarShort {
+    display: none !important; } }
