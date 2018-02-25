@@ -1,4 +1,4 @@
-.App {
+#root {
     text-align: center;
 }
 
@@ -25,50 +25,4 @@
 @keyframes App-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
-
-.navbar {
-    background-color: #006097 !important;
-
-    h1 {
-        text-align: left;
-    }
-}
-
-.navIcons {
-    svg, button {
-        color: #FFFFFF !important;
-    }
-
-    button {
-        svg {
-            fill: #FFFFFF !important;
-        }
-    }
-}
-
-#navbarFull {
-    display: none !important;
-}
-
-#navbarShort {
-    display: flex !important;
-}
-
-span[role=menuitem] {
-    svg {
-        position: relative;
-        top: 5px;
-        margin: 0 5px;
-    }
-}
-
-@media all and (min-width: 700px) {
-    #navbarFull {
-        display: flex !important;
-    }
-
-    #navbarShort {
-        display: none !important;
-    }
 }
