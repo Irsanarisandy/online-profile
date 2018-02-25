@@ -22,6 +22,6 @@
   to {
     transform: rotate(360deg); } }
 
-@media all and (min-width: 515px) {
+@media all and (min-width: 560px) {
   .App-header {
     height: 230px; } }
