@@ -1,3 +1,7 @@
+.drawer-item {
+  text-align: center;
+  text-decoration: none; }
+
 .navbar {
   background-color: #006097 !important; }
   .navbar h1 {
