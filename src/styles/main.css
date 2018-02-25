@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, sans-serif !important; }
+
+p, span {
+  font-size: 16px !important; }
+
+.app-header {
+  background-color: #328CC1 !important;
+  height: 250px;
+  padding: 20px;
+  color: #FFFFFF !important;
+  text-align: center;
+  border-radius: 0 !important; }
+
+.app-logo {
+  animation: app-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.app-title {
+  font-size: 1.5em; }
+
+.app-intro {
+  font-size: large !important; }
+
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@media all and (min-width: 515px) {
+  #home-content .app-header {
+    height: 230px; } }
+
+@media all and (min-width: 552px) {
+  #contact-content .app-header {
+    height: 230px; } }

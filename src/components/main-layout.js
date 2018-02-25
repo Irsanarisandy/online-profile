@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/Layout.css';
-import CustomNavbar from './CustomNavbar';
-import MainRoutes from './MainRoutes';
+import '../styles/layout.css';
+import CustomNavbar from './custom-navbar';
+import MainRoutes from './main-routes';
 
 const MainLayout = () => (
     <div id="main-layout">
