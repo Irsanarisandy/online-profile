@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/Home.css';
 import logo from '../assets/thinking.svg';
 
-const App = (props) => (
+const App = () => (
     <div id="home-content">
         <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />

@@ -27,7 +27,7 @@
     display: none !important;
 }
 
-#navbarShort {
+#drawer, #navbarShort {
     display: flex !important;
 }
 
@@ -44,7 +44,7 @@ span[role=menuitem] {
         display: flex !important;
     }
 
-    #navbarShort {
+    #drawer, #navbarShort {
         display: none !important;
     }
 }

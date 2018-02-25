@@ -58,26 +58,28 @@ export default class CustomNavbar extends React.Component {
     render() {
         return (
             <div id="custom-nav">
-                <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
-                    <h3 className="drawer-item">Please Hire Me</h3>
-                    <Link to='/' className="drawer-item">
-                        <MenuItem>{this.allIcons.actionhome}Home</MenuItem>
-                    </Link>
-                    <Link to='/projects' className="drawer-item">
-                        <MenuItem>{this.allIcons.actionwork}Projects</MenuItem>
-                    </Link>
-                    <Link to='/contact' className="drawer-item">
-                        <MenuItem>{this.allIcons.communicationcontacts}Contact</MenuItem>
-                    </Link>
-                    <div className="drawer-item">
-                        <IconButton href="https://github.com/irsanarisandy">
-                            {this.allIcons.github}
-                        </IconButton>
-                        <IconButton href="https://nz.linkedin.com/in/irsan-arisandy-72008b117">
-                            {this.allIcons.linkedin}
-                        </IconButton>
-                    </div>
-                </Drawer>
+                <div id="drawer">
+                    <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
+                        <h3 className="drawer-item">Please Hire Me</h3>
+                        <Link to='/' className="drawer-item">
+                            <MenuItem>{this.allIcons.actionhome}Home</MenuItem>
+                        </Link>
+                        <Link to='/projects' className="drawer-item">
+                            <MenuItem>{this.allIcons.actionwork}Projects</MenuItem>
+                        </Link>
+                        <Link to='/contact' className="drawer-item">
+                            <MenuItem>{this.allIcons.communicationcontacts}Contact</MenuItem>
+                        </Link>
+                        <div className="drawer-item">
+                            <IconButton href="https://github.com/irsanarisandy">
+                                {this.allIcons.github}
+                            </IconButton>
+                            <IconButton href="https://nz.linkedin.com/in/irsan-arisandy-72008b117">
+                                {this.allIcons.linkedin}
+                            </IconButton>
+                        </div>
+                    </Drawer>
+                </div>
                 <AppBar id="navbarShort" className="navbar" title="Please Hire Me" onLeftIconButtonClick={this.handleToggle} />
                 <AppBar id="navbarFull" className="navbar" title="Please Hire Me" iconElementLeft={<div/>} iconElementRight={<RightIcons allIcons={this.allIcons}/>} />
             </div>

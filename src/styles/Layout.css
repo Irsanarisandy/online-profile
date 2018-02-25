@@ -16,7 +16,7 @@
 #navbarFull {
   display: none !important; }
 
-#navbarShort {
+#drawer, #navbarShort {
   display: flex !important; }
 
 span[role=menuitem] svg {
@@ -27,5 +27,5 @@ span[role=menuitem] svg {
 @media all and (min-width: 700px) {
   #navbarFull {
     display: flex !important; }
-  #navbarShort {
+  #drawer, #navbarShort {
     display: none !important; } }

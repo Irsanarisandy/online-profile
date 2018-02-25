@@ -1,6 +1,6 @@
 import React from 'react';
 
-const App = (props) => (
+const App = () => (
     <div id="projects-content">
     </div>
 );
