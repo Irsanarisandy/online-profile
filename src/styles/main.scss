@@ -14,7 +14,6 @@ p, span {
     padding: 20px;
     color: #FFFFFF !important;
     text-align: center;
-    border-radius: 0 !important;
 }
 
 .app-logo {
@@ -33,20 +32,4 @@ p, span {
 @keyframes app-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
-
-@media all and (min-width: 515px) {
-    #home-content {
-        .app-header {
-            height: 230px;
-        }
-    }
-}
-
-@media all and (min-width: 552px) {
-    #contact-content {
-        .app-header {
-            height: 230px;
-        }
-    }
 }

@@ -1,0 +1,64 @@
+#contact-top-area {
+  margin: 30px 2% 0; }
+  #contact-top-area div, #contact-top-area a {
+    border-radius: 8px !important; }
+  #contact-top-area .contact-button {
+    box-shadow: 0 5px 8px !important; }
+
+.contact-two-papers {
+  display: inline-flex;
+  margin: 10px 5% 30px; }
+  .contact-two-papers div {
+    width: 100%; }
+
+.contact-button {
+  display: flex !important;
+  width: 92% !important;
+  margin: 15px 4%; }
+  .contact-button svg {
+    position: relative;
+    bottom: 2px;
+    left: 2px;
+    margin-left: 0 !important; }
+
+#contact-left-area {
+  width: 90%;
+  height: auto; }
+
+#contact-right-area {
+  display: none !important; }
+
+#skills-area {
+  width: 96%;
+  padding: 0 2%; }
+  #skills-area h3, #skills-area h4 {
+    margin: 15px 10px; }
+
+.chip-container {
+  padding: 0 0 10px; }
+
+.chips {
+  display: inline-flex !important;
+  margin: 0 5px 10px !important;
+  width: auto !important; }
+
+.chips:hover {
+  cursor: pointer !important; }
+
+@media all and (min-width: 634px) {
+  #contact-content .app-header {
+    height: 230px; }
+  #contact-top-area {
+    display: none; }
+  .contact-two-papers {
+    margin: 30px 2%; }
+  .contact-button svg {
+    margin-left: 12px !important; }
+  #contact-left-area {
+    width: 55%; }
+  #contact-right-area {
+    display: inline-flex !important;
+    width: 37%;
+    height: 350px; }
+    #contact-right-area h3, #contact-right-area h4 {
+      margin: 15px 4%; } }

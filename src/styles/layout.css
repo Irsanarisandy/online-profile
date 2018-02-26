@@ -24,8 +24,19 @@ span[role=menuitem] svg {
   top: 5px;
   margin: 0 5px; }
 
-@media all and (min-width: 810px) {
+#clock-nav-full, #clock-nav-short {
+  display: none !important; }
+
+@media all and (min-width: 380px) {
+  #clock-nav-short {
+    display: inline-block !important; } }
+
+@media all and (min-width: 700px) {
   #navbarFull {
     display: flex !important; }
   #drawer, #navbarShort {
     display: none !important; } }
+
+@media all and (min-width: 810px) {
+  #clock-nav-full {
+    display: inline-block !important; } }
