@@ -4,6 +4,7 @@ import {AppBar, Divider, Drawer, FlatButton, IconButton, MenuItem} from 'materia
 import ActionHome from 'material-ui/svg-icons/action/home';
 import ActionWork from 'material-ui/svg-icons/action/work';
 import CommunicationContacts from 'material-ui/svg-icons/communication/contacts';
+import '../styles/navbar.css';
 import GitHubIcon from './github-logo';
 import LinkedInIcon from './linkedin-logo';
 
