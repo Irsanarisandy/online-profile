@@ -85,42 +85,35 @@ const PeoplePapers = () => (
     </div>
 );
 
-class PaperArea extends React.Component {
-    constructor() {
-        super();
-        this.links = {
-            email: "mailto:irsanarisandy@hotmail.com",
-            github: "https://github.com/irsanarisandy",
-            linkedin: "https://nz.linkedin.com/in/irsan-arisandy-72008b117"
-        }
-    }
-
-    render() {
-        return (
-            <div id="contact-area">
-                <PeoplePapers />
-                <div id="contact-top-area">
-                    <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} target="_blank" label="CV" icon={<CVIcon/>} />
-                    <RaisedButton className="contact-button" backgroundColor="#0085E0" labelColor="#FFFFFF" href={this.links.email} label="Email" icon={<EmailIcon/>} />
-                    <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={this.links.github} target="_blank" label="GitHub" icon={<GitHubIcon/>} />
-                    <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={this.links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInIcon/>} />
-                </div>
-                <LeftArea />
-                <Paper zDepth={3} rounded={false} id="contact-right-area" className="contact-two-papers">
-                    <div>
-                        <h3>My CV:</h3>
-                        <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} target="_blank" label="CV" icon={<CVIcon/>} />
-                        <h3>My Email:</h3>
-                        <RaisedButton className="contact-button" backgroundColor="#0085E0" labelColor="#FFFFFF" href={this.links.email} label="Email" icon={<EmailIcon/>} />
-                        <h3>Follow Me:</h3>
-                        <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={this.links.github} target="_blank" label="GitHub" icon={<GitHubIcon/>} />
-                        <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={this.links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInIcon/>} />
-                    </div>
-                </Paper>
-            </div>
-        );
-    }
+const links = {
+    email: "mailto:irsanarisandy@hotmail.com",
+    github: "https://github.com/irsanarisandy",
+    linkedin: "https://nz.linkedin.com/in/irsan-arisandy-72008b117"
 }
+
+const PaperArea = () => (
+    <div id="contact-area">
+        <PeoplePapers />
+        <div id="contact-top-area">
+            <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} target="_blank" label="CV" icon={<CVIcon/>} />
+            <RaisedButton className="contact-button" backgroundColor="#0085E0" labelColor="#FFFFFF" href={links.email} label="Email" icon={<EmailIcon/>} />
+            <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={links.github} target="_blank" label="GitHub" icon={<GitHubIcon/>} />
+            <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInIcon/>} />
+        </div>
+        <LeftArea />
+        <Paper zDepth={3} rounded={false} id="contact-right-area" className="contact-two-papers">
+            <div>
+                <h3>My CV:</h3>
+                <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} target="_blank" label="CV" icon={<CVIcon/>} />
+                <h3>My Email:</h3>
+                <RaisedButton className="contact-button" backgroundColor="#0085E0" labelColor="#FFFFFF" href={links.email} label="Email" icon={<EmailIcon/>} />
+                <h3>Follow Me:</h3>
+                <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={links.github} target="_blank" label="GitHub" icon={<GitHubIcon/>} />
+                <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInIcon/>} />
+            </div>
+        </Paper>
+    </div>
+);
 
 const Contact = () => (
     <div id="contact-content">
