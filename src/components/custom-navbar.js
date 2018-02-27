@@ -9,7 +9,6 @@ import LinkedInIcon from './linkedin-logo';
 
 const RightIcons = (props) => (
     <div className="navIcons">
-        <FlatButton id="clock-nav-full" label={props.localdate} />
         <Link to='/'>
             <FlatButton label="Home" icon={props.allIcons.actionhome} />
         </Link>
@@ -19,12 +18,7 @@ const RightIcons = (props) => (
         <Link to='/contact'>
             <FlatButton label="Contact" icon={props.allIcons.communicationcontacts} />
         </Link>
-        <IconButton href={props.links.github}>
-            {props.allIcons.github}
-        </IconButton>
-        <IconButton href={props.links.linkedin}>
-            {props.allIcons.linkedin}
-        </IconButton>
+        <FlatButton id="clock-nav-full" label={props.localtime} />
     </div>
 );
 
@@ -45,7 +39,7 @@ class NavbarLayout extends React.Component {
                 <div id="drawer">
                     <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
                         <h3 className="drawer-item">Please Hire Me</h3>
-                        <p className="drawer-item">{this.props.localdate}</p>
+                        <p className="drawer-item">{this.props.date.toLocaleTimeString()}</p>
                         <Divider />
                         <Link to='/' className="drawer-item">
                             <MenuItem>{this.props.allIcons.actionhome}Home</MenuItem>
@@ -60,21 +54,21 @@ class NavbarLayout extends React.Component {
                         </Link>
                         <Divider />
                         <div className="drawer-item">
-                            <IconButton href={this.props.links.github}>
+                            <IconButton href={this.props.links.github} target="_blank">
                                 {this.props.allIcons.github}
                             </IconButton>
-                            <IconButton href={this.props.links.linkedin}>
+                            <IconButton href={this.props.links.linkedin} target="_blank">
                                 {this.props.allIcons.linkedin}
                             </IconButton>
                         </div>
                         <Divider />
-                        <p className="drawer-item">Irsan Arisandy &#64; 2018</p>
+                        <p className="drawer-item">Irsan Arisandy &#64; {this.props.date.getFullYear()}</p>
                     </Drawer>
                 </div>
                 <AppBar id="navbarShort" className="navbar" title="Please Hire Me" onLeftIconButtonClick={this.handleToggle}
-                    iconElementRight={<FlatButton id="clock-nav-short" label={this.props.localdate}/>} />
+                    iconElementRight={<FlatButton id="clock-nav-short" label={this.props.date.toLocaleTimeString()}/>} />
                 <AppBar id="navbarFull" className="navbar" title="Please Hire Me" iconElementLeft={<div/>}
-                    iconElementRight={<RightIcons allIcons={this.props.allIcons} links={this.props.links} localdate={this.props.localdate}/>} />
+                    iconElementRight={<RightIcons allIcons={this.props.allIcons} links={this.props.links} localtime={this.props.date.toLocaleTimeString()}/>} />
             </div>
         );
     }
@@ -111,7 +105,7 @@ export default class CustomNavbar extends React.Component {
 
     render() {
         return (
-            <NavbarLayout allIcons={this.allIcons} links={this.links} localdate={this.state.date.toLocaleTimeString()} />
+            <NavbarLayout allIcons={this.allIcons} links={this.links} date={this.state.date} />
         );
     }
 }

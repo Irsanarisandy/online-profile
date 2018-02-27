@@ -64,6 +64,40 @@
     cursor: pointer !important;
 }
 
+#people-papers {
+    display: none;
+}
+
+@media all and (min-width: 480px) {
+    #people-papers {
+        display: block;
+        margin: 30px 2% 0;
+        width: 96%;
+        text-align: center;
+    }
+    
+    .people-paper {
+        display: inline-flex;
+        margin: 15px;
+        width: 200px;
+        height: auto;
+        border-radius: 10px !important;
+    
+        div {
+            width: 100%;
+        }
+    
+        img {
+            background-color: #328CC1 !important;
+            margin: 20px 15px;
+        }
+    
+        h3, p {
+            margin: 0 15px 20px;
+        }
+    }
+}
+
 @media all and (min-width: 634px) {
     #contact-content {
         .app-header {
@@ -92,7 +126,7 @@
     #contact-right-area {
         display: inline-flex !important;
         width: 37%;
-        height: 350px;
+        height: auto;
 
         h3, h4 {
             margin: 15px 4%;

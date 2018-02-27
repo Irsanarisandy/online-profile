@@ -52,6 +52,39 @@ const LeftArea = () => (
     </Paper>
 );
 
+const PeoplePapers = () => (
+    <div id="people-papers">
+        <Paper zDepth={3} className="people-paper">
+            <div>
+                <Avatar size={70} src={logo} />
+                <h3>Irsan Arisandy</h3>
+                <p>Front-end Developer</p>
+            </div>
+        </Paper>
+        <Paper zDepth={3} className="people-paper">
+            <div>
+                <Avatar size={70} src={logo} />
+                <h3>Irsan Arisandy</h3>
+                <p>Back-end Developer</p>
+            </div>
+        </Paper>
+        <Paper zDepth={3} className="people-paper">
+            <div>
+                <Avatar size={70} src={logo} />
+                <h3>Irsan Arisandy</h3>
+                <p>Software Developer</p>
+            </div>
+        </Paper>
+        <Paper zDepth={3} className="people-paper">
+            <div>
+                <Avatar size={70} src={logo} />
+                <h3>Irsan Arisandy</h3>
+                <p>Meme Enthusiast</p>
+            </div>
+        </Paper>
+    </div>
+);
+
 class PaperArea extends React.Component {
     constructor() {
         super();
@@ -65,22 +98,23 @@ class PaperArea extends React.Component {
     render() {
         return (
             <div id="contact-area">
+                <PeoplePapers />
                 <div id="contact-top-area">
-                    <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} label="CV" icon={<CVIcon/>} />
+                    <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} target="_blank" label="CV" icon={<CVIcon/>} />
                     <RaisedButton className="contact-button" backgroundColor="#0085E0" labelColor="#FFFFFF" href={this.links.email} label="Email" icon={<EmailIcon/>} />
-                    <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={this.links.github} label="GitHub" icon={<GitHubIcon/>} />
-                    <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={this.links.linkedin} label="LinkedIn" icon={<LinkedInIcon/>} />
+                    <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={this.links.github} target="_blank" label="GitHub" icon={<GitHubIcon/>} />
+                    <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={this.links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInIcon/>} />
                 </div>
                 <LeftArea />
                 <Paper zDepth={3} rounded={false} id="contact-right-area" className="contact-two-papers">
                     <div>
                         <h3>My CV:</h3>
-                        <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} label="CV" icon={<CVIcon/>} />
+                        <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} target="_blank" label="CV" icon={<CVIcon/>} />
                         <h3>My Email:</h3>
                         <RaisedButton className="contact-button" backgroundColor="#0085E0" labelColor="#FFFFFF" href={this.links.email} label="Email" icon={<EmailIcon/>} />
                         <h3>Follow Me:</h3>
-                        <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={this.links.github} label="GitHub" icon={<GitHubIcon/>} />
-                        <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={this.links.linkedin} label="LinkedIn" icon={<LinkedInIcon/>} />
+                        <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={this.links.github} target="_blank" label="GitHub" icon={<GitHubIcon/>} />
+                        <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={this.links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInIcon/>} />
                     </div>
                 </Paper>
             </div>

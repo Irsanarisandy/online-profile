@@ -12,11 +12,12 @@
 }
 
 .navIcons {
-    svg, button {
-        color: #FFFFFF !important;
-    }
+    position: relative;
+    top: 4px;
 
     button {
+        color: #FFFFFF !important;
+
         svg {
             fill: #FFFFFF !important;
         }
@@ -59,7 +60,7 @@ span[role=menuitem] {
     }
 }
 
-@media all and (min-width: 810px) {
+@media all and (min-width: 750px) {
     #clock-nav-full {
         display: inline-block !important;
     }
