@@ -1,3 +1,21 @@
-@media all and (min-width: 515px) {
+#screen-too-small {
+  text-align: center;
+  padding: 8px;
+  margin: 20px 0; }
+
+#game-arena {
+  display: none; }
+
+@media all and (min-width: 350px) {
   #home-content .app-header {
     height: 230px; } }
+
+@media all and (min-width: 690px) {
+  #screen-too-small {
+    display: none; }
+  #game-arena {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    text-align: center; } }

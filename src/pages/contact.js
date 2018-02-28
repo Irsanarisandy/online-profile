@@ -79,7 +79,7 @@ const PeoplePapers = () => (
             <div>
                 <Avatar size={70} src={logo} />
                 <h3>Irsan Arisandy</h3>
-                <p>Meme Enthusiast</p>
+                <p>Traveller</p>
             </div>
         </Paper>
     </div>

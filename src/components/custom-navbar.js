@@ -79,7 +79,7 @@ export default class CustomNavbar extends React.Component {
                             </IconButton>
                         </div>
                         <Divider />
-                        <p className="drawer-item">Irsan Arisandy &#64; {this.state.date.getFullYear()}</p>
+                        <p className="drawer-item">Irsan Arisandy &#169; {this.state.date.getFullYear()}</p>
                     </Drawer>
                 </div>
                 <AppBar id="navbarShort" className="navbar" title="Please Hire Me" onLeftIconButtonClick={this.handleToggle}
