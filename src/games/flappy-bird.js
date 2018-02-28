@@ -1,5 +1,6 @@
 import React from 'react';
-import FlatButton from 'material-ui/FlatButton';
+import {Dialog, FlatButton} from 'material-ui';
+import Help from 'material-ui/svg-icons/action/help-outline';
 import Restore from 'material-ui/svg-icons/action/restore';
 
 function GridCell(props) {
@@ -50,7 +51,7 @@ export default class FlappyBird extends React.Component {
             padding: '15px 0 0'
         }
         this.buttonStyle = {
-            margin: '0 0 15px'
+            margin: '0 5px 15px'
         }
 
         const gameHeight = 20;
@@ -62,7 +63,9 @@ export default class FlappyBird extends React.Component {
         const birdPosition = 1;
         const towerColor = 'gray';
         const towerAmount = 16;
-        const towerGap = 5;
+        const towerInitPos = birdPosition + 1;
+        const towerHeightGap = 5;
+        const towerPosDistance = 4;
         const minTowerHeight = 3;
         const maxTowerHeight = gameHeight / 2;
 
@@ -77,16 +80,17 @@ export default class FlappyBird extends React.Component {
 
         var towers = [];
         var initialHeight = 0;
-        var initialPosition = 2;
+        var initialPosition = towerInitPos;
         var initialOnground = false;
         for (let i = 0; i < towerAmount; i++) {
             initialHeight = (i % 2 === 0) ?
                 Math.floor(Math.random() * (maxTowerHeight - minTowerHeight)) + minTowerHeight
-                : gameHeight - initialHeight - towerGap;
+                : gameHeight - initialHeight - towerHeightGap;
             initialOnground = i % 2 === 0;
             towers.push({height: initialHeight, position: initialPosition, onground: initialOnground});
             if (i % 2 === 1) {
-                initialPosition += (initialPosition < 26) ? 4 : 3;  // min. index = 0, max. index = 29
+                // min. index = 0, max. index = 29
+                initialPosition += (initialPosition < 26) ? towerPosDistance : towerPosDistance-1;
             }
         }
 
@@ -96,7 +100,7 @@ export default class FlappyBird extends React.Component {
         };
         grid[bird.height][bird.position] = birdColor;
 
-        this.state = {grid: grid, towers: towers, bird: bird, crashed: false, score: 0};
+        this.state = {grid: grid, towers: towers, bird: bird, crashed: false, score: 0, open: false};
 
         this.timerID = setInterval(() => {   // updates game every 0.2 sec
             if (this.state.crashed) {
@@ -118,7 +122,7 @@ export default class FlappyBird extends React.Component {
                 towersCopy[i].position--;
                 if (towersCopy[i].position < 0) {
                     towersCopy[i].position = gameWidth-1;
-                    towersCopy[i].height = (!towersCopy[i].onground) ? generatedHeight : gameHeight - generatedHeight - towerGap;
+                    towersCopy[i].height = (!towersCopy[i].onground) ? generatedHeight : gameHeight - generatedHeight - towerHeightGap;
                 }
             }
             
@@ -160,6 +164,8 @@ export default class FlappyBird extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.handleSpace = this.handleSpace.bind(this);
         this.restart = this.restart.bind(this);
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     handleClick() {
@@ -183,6 +189,14 @@ export default class FlappyBird extends React.Component {
         this.setState({crashed: false, bird: birdCopy, score: 0});
     }
 
+    handleOpen() {
+        this.setState({open: true});
+    }
+
+    handleClose() {
+        this.setState({open: false});
+    }
+
     componentDidMount(){
         document.addEventListener("keydown", this.handleSpace, false);
     }
@@ -198,6 +212,12 @@ export default class FlappyBird extends React.Component {
                 <div onClick={this.handleClick}>
                     <Grid grid={this.state.grid}/>
                 </div>
+                <FlatButton onClick={this.handleOpen} style={this.buttonStyle} label="How To Play" icon={<Help/>}/>
+                <Dialog title="How To Play:" actions={<FlatButton onClick={this.handleClose} label="Close"/>} modal={false}
+                    open={this.state.open} onRequestClose={this.handleClose}>
+                    <p>Simply left click on the game, or press space, to fly up.</p>
+                    <p>The aim of the game is to avoid as many of the towers as possible.</p>
+                </Dialog>
                 {this.state.crashed ? 
                     <FlatButton onClick={this.restart} style={this.buttonStyle} label="Restart" icon={<Restore/>}/>
                     : null}
