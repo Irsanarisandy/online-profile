@@ -21,8 +21,8 @@ function GridRow(props) {
 
     return (
         <div style={style}>
-            {props.row.map((cell) => {
-                return (<GridCell cell={cell}/>);
+            {props.row.map((cell, index) => {
+                return (<GridCell cell={cell} key={"c" + index.toString()}/>);
             })}
         </div>
     );
@@ -36,8 +36,8 @@ function Grid(props) {
 
     return (
         <div style={style}>
-            {props.grid.map((row) => {
-                return (<GridRow row={row}/>);
+            {props.grid.map((row, index) => {
+                return (<GridRow row={row} key={"r" + index.toString()}/>);
             })}
         </div>
     );
@@ -53,54 +53,63 @@ export default class FlappyBird extends React.Component {
         this.buttonStyle = {
             margin: '0 5px 15px'
         }
-
-        const gameHeight = 20;
-        const gameWidth = 30;
-        const skyColor = 'deepskyblue';
-        const groundColor = 'forestgreen';
-        const birdColor = 'yellow';
+        this.gameHeight = 20;
+        this.gameWidth = 30;
+        this.skyColor = 'deepskyblue';
+        this.groundColor = 'forestgreen';
+        this.birdColor = 'yellow';
         this.birdInitHeight = 10;
-        const birdPosition = 1;
-        const towerColor = 'gray';
-        const towerAmount = 16;
-        const towerInitPos = birdPosition + 1;
-        const towerHeightGap = 5;
-        const towerPosDistance = 4;
-        const minTowerHeight = 3;
-        const maxTowerHeight = gameHeight / 2;
+        this.birdPosition = 1;
+        this.towerColor = 'gray';
+        this.towerAmount = 16;
+        this.towerInitPos = this.birdPosition + 1;
+        this.towerHeightGap = 5;
+        this.towerPosDistance = 4;
+        this.minTowerHeight = 3;
+        this.maxTowerHeight = this.gameHeight / 2;
 
         var grid = [];
-        for (let i = 0; i < gameHeight; i++) {
-            if (i < gameHeight-5) {
-                grid.push(new Array(gameWidth).fill(skyColor));
+        for (let i = 0; i < this.gameHeight; i++) {
+            if (i < this.gameHeight-5) {
+                grid.push(new Array(this.gameWidth).fill(this.skyColor));
             } else {
-                grid.push(new Array(gameWidth).fill(groundColor));
+                grid.push(new Array(this.gameWidth).fill(this.groundColor));
             }
         }
 
         var towers = [];
         var initialHeight = 0;
-        var initialPosition = towerInitPos;
+        var initialPosition = this.towerInitPos;
         var initialOnground = false;
-        for (let i = 0; i < towerAmount; i++) {
+        for (let i = 0; i < this.towerAmount; i++) {
             initialHeight = (i % 2 === 0) ?
-                Math.floor(Math.random() * (maxTowerHeight - minTowerHeight)) + minTowerHeight
-                : gameHeight - initialHeight - towerHeightGap;
+                Math.floor(Math.random() * (this.maxTowerHeight - this.minTowerHeight)) + this.minTowerHeight
+                : this.gameHeight - initialHeight - this.towerHeightGap;
             initialOnground = i % 2 === 0;
             towers.push({height: initialHeight, position: initialPosition, onground: initialOnground});
             if (i % 2 === 1) {
                 // min. index = 0, max. index = 29
-                initialPosition += (initialPosition < 26) ? towerPosDistance : towerPosDistance-1;
+                initialPosition += (initialPosition < 26) ? this.towerPosDistance : this.towerPosDistance-1;
             }
         }
 
         var bird = {
             height: this.birdInitHeight,
-            position: birdPosition
+            position: this.birdPosition
         };
-        grid[bird.height][bird.position] = birdColor;
+        grid[bird.height][bird.position] = this.birdColor;
 
         this.state = {grid: grid, towers: towers, bird: bird, crashed: false, score: 0, open: false};
+
+        this.handleClick = this.handleClick.bind(this);
+        this.handleSpace = this.handleSpace.bind(this);
+        this.restart = this.restart.bind(this);
+        this.handleOpen = this.handleOpen.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+    }
+
+    componentDidMount(){
+        document.addEventListener("keydown", this.handleSpace, false);
 
         this.timerID = setInterval(() => {   // updates game every 0.2 sec
             if (this.state.crashed) {
@@ -108,30 +117,30 @@ export default class FlappyBird extends React.Component {
             }
 
             var gridCopy = [];
-            for (let i = 0; i < gameHeight; i++) {
-                if (i < gameHeight-5) {
-                    gridCopy.push(new Array(gameWidth).fill(skyColor));
+            for (let i = 0; i < this.gameHeight; i++) {
+                if (i < this.gameHeight-5) {
+                    gridCopy.push(new Array(this.gameWidth).fill(this.skyColor));
                 } else {
-                    gridCopy.push(new Array(gameWidth).fill(groundColor));
+                    gridCopy.push(new Array(this.gameWidth).fill(this.groundColor));
                 }
             }
 
             var towersCopy = this.state.towers.slice();   // copy the array object, not pointer
-            const generatedHeight = Math.floor(Math.random() * (maxTowerHeight - minTowerHeight)) + minTowerHeight;
+            const generatedHeight = Math.floor(Math.random() * (this.maxTowerHeight - this.minTowerHeight)) + this.minTowerHeight;
             for (let i = 0; i < towersCopy.length; i++) {
                 towersCopy[i].position--;
                 if (towersCopy[i].position < 0) {
-                    towersCopy[i].position = gameWidth-1;
-                    towersCopy[i].height = (!towersCopy[i].onground) ? generatedHeight : gameHeight - generatedHeight - towerHeightGap;
+                    towersCopy[i].position = this.gameWidth-1;
+                    towersCopy[i].height = (!towersCopy[i].onground) ? generatedHeight : this.gameHeight - generatedHeight - this.towerHeightGap;
                 }
             }
             
             for (let i = 0; i < towersCopy.length; i++) {
                 for (let j = 0; j < towersCopy[i].height; j++) {
                     if (towersCopy[i].onground) {
-                        gridCopy[gameHeight-j-1][towersCopy[i].position] = towerColor;
+                        gridCopy[this.gameHeight-j-1][towersCopy[i].position] = this.towerColor;
                     } else {
-                        gridCopy[j][towersCopy[i].position] = towerColor;
+                        gridCopy[j][towersCopy[i].position] = this.towerColor;
                     }
                 }
             }
@@ -139,10 +148,10 @@ export default class FlappyBird extends React.Component {
             var birdCopy = this.state.bird;
             birdCopy.height++;   // bird goes down by gravity (inverse)
 
-            var crashed = birdCopy.height < 0 || birdCopy.height > gameHeight-1;
+            var crashed = birdCopy.height < 0 || birdCopy.height > this.gameHeight-1;
             var reachedTower = false;
-            for (let i = 0; i < gameHeight; i++) {
-                if (gridCopy[i][bird.position] === towerColor) {
+            for (let i = 0; i < this.gameHeight; i++) {
+                if (gridCopy[i][this.birdPosition] === this.towerColor) {
                     reachedTower = true;
 
                     if (birdCopy.height === i) {
@@ -156,19 +165,19 @@ export default class FlappyBird extends React.Component {
                 this.setState({score: this.state.score + 1});
             }
 
-            gridCopy[birdCopy.height][birdCopy.position] = birdColor;
+            gridCopy[birdCopy.height][birdCopy.position] = this.birdColor;
 
             this.setState({grid: gridCopy, towers: towersCopy, bird: birdCopy});
         }, 200);
-
-        this.handleClick = this.handleClick.bind(this);
-        this.handleSpace = this.handleSpace.bind(this);
-        this.restart = this.restart.bind(this);
-        this.handleOpen = this.handleOpen.bind(this);
-        this.handleClose = this.handleClose.bind(this);
     }
 
-    handleClick() {
+    componentWillUnmount(){
+        document.removeEventListener("keydown", this.handleSpace, false);
+        clearInterval(this.timerID);
+    }
+
+    handleClick(event) {
+        event.preventDefault();
         if (this.state.crashed) {
             return
         }
@@ -178,8 +187,9 @@ export default class FlappyBird extends React.Component {
     }
 
     handleSpace(event) {
+        event.preventDefault();
         if (event.keyCode === 32) {
-            this.handleClick();
+            this.handleClick(event);
         }
     }
     
@@ -195,14 +205,6 @@ export default class FlappyBird extends React.Component {
 
     handleClose() {
         this.setState({open: false});
-    }
-
-    componentDidMount(){
-        document.addEventListener("keydown", this.handleSpace, false);
-    }
-
-    componentWillUnmount(){
-        document.removeEventListener("keydown", this.handleSpace, false);
     }
 
     render() {
