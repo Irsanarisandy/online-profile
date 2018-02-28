@@ -5,10 +5,6 @@
 
 .navbar {
     background-color: #006097 !important;
-
-    h1 {
-        text-align: left;
-    }
 }
 
 .navIcons {
@@ -28,7 +24,24 @@
     display: none !important;
 }
 
-#drawer, #navbarShort {
+#navbarShort {
+    display: flex !important;
+
+    h1 {
+        text-align: center;
+    }
+
+    button {
+        padding: 0 12px !important;
+    }
+
+    svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+
+#drawer {
     display: flex !important;
 }
 
@@ -50,7 +63,7 @@ span[role=menuitem] {
     }
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 620px) {
     #navbarFull {
         display: flex !important;
     }

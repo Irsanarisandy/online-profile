@@ -55,7 +55,7 @@ export default class CustomNavbar extends React.Component {
             <div id="custom-nav">
                 <div id="drawer">
                     <Drawer docked={false} width={200} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
-                        <h3 className="drawer-item">Please Hire Me</h3>
+                        <h3 className="drawer-item">Irsan's Profile</h3>
                         <p className="drawer-item">{this.state.date.toLocaleTimeString()}</p>
                         <Divider />
                         <Link to='/' className="drawer-item">
@@ -82,9 +82,9 @@ export default class CustomNavbar extends React.Component {
                         <p className="drawer-item">Irsan Arisandy &#169; {this.state.date.getFullYear()}</p>
                     </Drawer>
                 </div>
-                <AppBar id="navbarShort" className="navbar" title="Please Hire Me" onLeftIconButtonClick={this.handleToggle}
+                <AppBar id="navbarShort" className="navbar" title="Irsan's Profile" onLeftIconButtonClick={this.handleToggle}
                     iconElementRight={<FlatButton id="clock-nav-short" label={this.state.date.toLocaleTimeString()}/>} />
-                <AppBar id="navbarFull" className="navbar" title="Please Hire Me" iconElementLeft={<div/>}
+                <AppBar id="navbarFull" className="navbar" title="Irsan's Profile" iconElementLeft={<div/>}
                     iconElementRight={<RightIcons localtime={this.state.date.toLocaleTimeString()}/>} />
             </div>
         );

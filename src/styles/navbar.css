@@ -4,8 +4,6 @@
 
 .navbar {
   background-color: #006097 !important; }
-  .navbar h1 {
-    text-align: left; }
 
 .navIcons {
   position: relative;
@@ -18,7 +16,17 @@
 #navbarFull {
   display: none !important; }
 
-#drawer, #navbarShort {
+#navbarShort {
+  display: flex !important; }
+  #navbarShort h1 {
+    text-align: center; }
+  #navbarShort button {
+    padding: 0 12px !important; }
+  #navbarShort svg {
+    width: 30px !important;
+    height: 30px !important; }
+
+#drawer {
   display: flex !important; }
 
 span[role=menuitem] svg {
@@ -33,7 +41,7 @@ span[role=menuitem] svg {
   #clock-nav-short {
     display: inline-block !important; } }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 620px) {
   #navbarFull {
     display: flex !important; }
   #drawer, #navbarShort {
