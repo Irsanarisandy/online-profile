@@ -11,7 +11,8 @@ const About = () => (
             <h1 className="app-title">About Me</h1>
         </Paper>
         <Paper zDepth={3} rounded={false} id="about-paper">
-            <p><Avatar src={dp} size={100} />
+            <Avatar src={dp} size={100} />
+            <p>
                 Hi there! I'm a Computer Science graduate from the University of Auckland,
                 seeking opportunities to work as a full-stack website developer or a software developer.
                 I'm enthusiastic when it comes to learning new skills, especially when it relates to
