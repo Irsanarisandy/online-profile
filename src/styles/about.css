@@ -1,0 +1,16 @@
+#about-content .app-header {
+  height: 180px; }
+
+#about-paper {
+  padding: 10px 30px;
+  margin: 20px 0; }
+  #about-paper img {
+    float: left;
+    margin: 0 15px 5px 0; }
+  #about-paper p {
+    text-align: justify; }
+
+@media all and (min-width: 300px) {
+  #about-paper img {
+    width: 150px !important;
+    height: 150px !important; } }

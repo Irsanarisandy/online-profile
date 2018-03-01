@@ -2,16 +2,20 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {AppBar, Divider, Drawer, FlatButton, IconButton, MenuItem} from 'material-ui';
 import ActionHome from 'material-ui/svg-icons/action/home';
+import ActionSubject from 'material-ui/svg-icons/action/subject';
 import ActionWork from 'material-ui/svg-icons/action/work';
 import CommunicationContacts from 'material-ui/svg-icons/communication/contacts';
 import '../styles/navbar.css';
 import GitHubIcon from './github-logo';
 import LinkedInIcon from './linkedin-logo';
 
-const RightIcons = (props) => (
+const RightElements = (props) => (
     <div className="navIcons">
         <Link to='/'>
             <FlatButton label="Home" icon={<ActionHome/>} />
+        </Link>
+        <Link to='/about'>
+            <FlatButton label="About" icon={<ActionSubject/>} />
         </Link>
         <Link to='/projects'>
             <FlatButton label="Projects" icon={<ActionWork/>} />
@@ -62,6 +66,10 @@ export default class CustomNavbar extends React.Component {
                             <MenuItem>{<ActionHome/>}Home</MenuItem>
                         </Link>
                         <Divider />
+                        <Link to='/about' className="drawer-item">
+                            <MenuItem>{<ActionSubject/>}About</MenuItem>
+                        </Link>
+                        <Divider />
                         <Link to='/projects' className="drawer-item">
                             <MenuItem>{<ActionWork/>}Projects</MenuItem>
                         </Link>
@@ -85,7 +93,7 @@ export default class CustomNavbar extends React.Component {
                 <AppBar id="navbarShort" className="navbar" title="Irsan's Profile" onLeftIconButtonClick={this.handleToggle}
                     iconElementRight={<FlatButton id="clock-nav-short" label={this.state.date.toLocaleTimeString()}/>} />
                 <AppBar id="navbarFull" className="navbar" title="Irsan's Profile" iconElementLeft={<div/>}
-                    iconElementRight={<RightIcons localtime={this.state.date.toLocaleTimeString()}/>} />
+                    iconElementRight={<RightElements localtime={this.state.date.toLocaleTimeString()}/>} />
             </div>
         );
     }
