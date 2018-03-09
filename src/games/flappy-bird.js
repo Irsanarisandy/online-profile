@@ -44,8 +44,8 @@ function Grid(props) {
 }
 
 export default class FlappyBird extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.scoreStyle = {
             margin: 0,
             padding: '15px 0 0'
@@ -68,7 +68,7 @@ export default class FlappyBird extends React.Component {
         this.minTowerHeight = 3;
         this.maxTowerHeight = this.gameHeight / 2;
 
-        var grid = [];
+        let grid = [];
         for (let i = 0; i < this.gameHeight; i++) {
             if (i < this.gameHeight-5) {
                 grid.push(new Array(this.gameWidth).fill(this.skyColor));
@@ -77,10 +77,10 @@ export default class FlappyBird extends React.Component {
             }
         }
 
-        var towers = [];
-        var initialHeight = 0;
-        var initialPosition = this.towerInitPos;
-        var initialOnground = false;
+        let towers = [];
+        let initialHeight = 0;
+        let initialPosition = this.towerInitPos;
+        let initialOnground = false;
         for (let i = 0; i < this.towerAmount; i++) {
             initialHeight = (i % 2 === 0) ?
                 Math.floor(Math.random() * (this.maxTowerHeight - this.minTowerHeight)) + this.minTowerHeight
@@ -93,7 +93,7 @@ export default class FlappyBird extends React.Component {
             }
         }
 
-        var bird = {
+        const bird = {
             height: this.birdInitHeight,
             position: this.birdPosition
         };
@@ -116,7 +116,7 @@ export default class FlappyBird extends React.Component {
                 return
             }
 
-            var gridCopy = [];
+            let gridCopy = [];
             for (let i = 0; i < this.gameHeight; i++) {
                 if (i < this.gameHeight-5) {
                     gridCopy.push(new Array(this.gameWidth).fill(this.skyColor));
@@ -125,7 +125,7 @@ export default class FlappyBird extends React.Component {
                 }
             }
 
-            var towersCopy = this.state.towers.slice();   // copy the array object, not pointer
+            let towersCopy = this.state.towers.slice();   // copy the array object, not pointer
             const generatedHeight = Math.floor(Math.random() * (this.maxTowerHeight - this.minTowerHeight)) + this.minTowerHeight;
             for (let i = 0; i < towersCopy.length; i++) {
                 towersCopy[i].position--;
@@ -145,11 +145,11 @@ export default class FlappyBird extends React.Component {
                 }
             }
 
-            var birdCopy = this.state.bird;
+            let birdCopy = this.state.bird;
             birdCopy.height++;   // bird goes down by gravity (inverse)
 
-            var crashed = birdCopy.height < 0 || birdCopy.height > this.gameHeight-1;
-            var reachedTower = false;
+            let crashed = birdCopy.height < 0 || birdCopy.height > this.gameHeight-1;
+            let reachedTower = false;
             for (let i = 0; i < this.gameHeight; i++) {
                 if (gridCopy[i][this.birdPosition] === this.towerColor) {
                     reachedTower = true;
@@ -181,7 +181,7 @@ export default class FlappyBird extends React.Component {
         if (this.state.crashed) {
             return
         }
-        var birdCopy = this.state.bird;
+        let birdCopy = this.state.bird;
         birdCopy.height -= 3;   // bird flies up (inverse)
         this.setState({bird: birdCopy});
     }
@@ -194,7 +194,7 @@ export default class FlappyBird extends React.Component {
     }
     
     restart() {
-        var birdCopy = this.state.bird;
+        let birdCopy = this.state.bird;
         birdCopy.height = this.birdInitHeight;
         this.setState({crashed: false, bird: birdCopy, score: 0});
     }

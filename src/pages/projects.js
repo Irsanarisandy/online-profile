@@ -3,7 +3,7 @@ import Paper from 'material-ui/Paper';
 import logo from '../assets/thinking.svg';
 import '../styles/projects.css';
 
-const Projects = () => (
+export default () => (
     <div id="projects-content">
         <Paper zDepth={3} rounded={false} className="app-header">
             <img src={logo} className="app-logo" alt="logo" />
@@ -14,5 +14,3 @@ const Projects = () => (
         </Paper>
     </div>
 );
-
-export default Projects;

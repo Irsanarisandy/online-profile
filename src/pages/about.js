@@ -4,7 +4,7 @@ import logo from '../assets/thinking.svg';
 import '../styles/about.css';
 import dp from '../assets/dp.jpg';
 
-const About = () => (
+export default () => (
     <div id="about-content">
         <Paper zDepth={3} rounded={false} className="app-header">
             <img src={logo} className="app-logo" alt="logo" />
@@ -34,5 +34,3 @@ const About = () => (
         </Paper>
     </div>
 );
-
-export default About;

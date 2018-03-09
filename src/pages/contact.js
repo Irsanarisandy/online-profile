@@ -2,10 +2,7 @@ import React from 'react';
 import {Avatar, Chip, Divider, Paper, RaisedButton} from 'material-ui';
 import logo from '../assets/thinking.svg';
 import CV from '../assets/CV.pdf';
-import CVIcon from '../components/cv-logo';
-import EmailIcon from '../components/email-logo';
-import GitHubIcon from '../components/github-logo';
-import LinkedInIcon from '../components/linkedin-logo';
+import {CVIcon, EmailIcon, GitHubIcon, LinkedInIcon} from '../components/logos';
 import '../styles/contact.css';
 
 const LeftArea = () => (
@@ -115,7 +112,7 @@ const PaperArea = () => (
     </div>
 );
 
-const Contact = () => (
+export default () => (
     <div id="contact-content">
         <Paper zDepth={3} rounded={false} className="app-header">
             <img src={logo} className="app-logo" alt="logo" />
@@ -128,5 +125,3 @@ const Contact = () => (
         <PaperArea />
     </div>
 );
-
-export default Contact;

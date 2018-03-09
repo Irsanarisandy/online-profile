@@ -5,7 +5,7 @@ import About from '../pages/about';
 import Projects from '../pages/projects';
 import Contact from '../pages/contact';
 
-const Routes = () => (
+export default () => (
     <Switch>
         <Route exact path='/' component={Home}/>
         <Route path='/about' component={About}/>
@@ -13,5 +13,3 @@ const Routes = () => (
         <Route path='/contact' component={Contact}/>
     </Switch>
 );
-
-export default Routes;

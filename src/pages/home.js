@@ -4,7 +4,7 @@ import logo from '../assets/thinking.svg';
 import '../styles/home.css';
 import FlappyBird from '../games/flappy-bird';
 
-const Home = () => (
+export default () => (
     <div id="home-content">
         <Paper zDepth={3} rounded={false} className="app-header">
             <img src={logo} className="app-logo" alt="logo" />
@@ -22,5 +22,3 @@ const Home = () => (
         </Paper>
     </div>
 );
-
-export default Home;
