@@ -5,8 +5,8 @@ import ActionHome from 'material-ui/svg-icons/action/home';
 import ActionSubject from 'material-ui/svg-icons/action/subject';
 import ActionWork from 'material-ui/svg-icons/action/work';
 import CommunicationContacts from 'material-ui/svg-icons/communication/contacts';
+import {GitHubLogo, LinkedInLogo} from './logos-and-icons';
 import '../styles/navbar.css';
-import {GitHubIcon, LinkedInIcon} from './logos';
 
 const NavElements = (props) => {
     switch(props.type.toUpperCase()) {
@@ -89,10 +89,10 @@ export default class CustomNavbar extends React.Component {
                 label: 'Contact'
             }, {
                 link: "https://github.com/irsanarisandy",
-                icon: <GitHubIcon/>
+                icon: <GitHubLogo/>
             }, {
                 link: "https://nz.linkedin.com/in/irsan-arisandy-72008b117",
-                icon: <LinkedInIcon/>
+                icon: <LinkedInLogo/>
             }
         ];
 

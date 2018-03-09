@@ -2,7 +2,7 @@ import React from 'react';
 import {Avatar, Chip, Divider, Paper, RaisedButton} from 'material-ui';
 import logo from '../assets/thinking.svg';
 import CV from '../assets/CV.pdf';
-import {CVIcon, EmailIcon, GitHubIcon, LinkedInIcon} from '../components/logos';
+import {CVIcon, EmailIcon, GitHubLogo, LinkedInLogo} from '../components/logos-and-icons';
 import '../styles/contact.css';
 
 const LeftArea = () => (
@@ -94,8 +94,8 @@ const PaperArea = () => (
         <div id="contact-top-area">
             <RaisedButton className="contact-button" backgroundColor="#EE3F24" labelColor="#FFFFFF" href={CV} target="_blank" label="CV" icon={<CVIcon/>} />
             <RaisedButton className="contact-button" backgroundColor="#0085E0" labelColor="#FFFFFF" href={links.email} label="Email" icon={<EmailIcon/>} />
-            <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={links.github} target="_blank" label="GitHub" icon={<GitHubIcon/>} />
-            <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInIcon/>} />
+            <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={links.github} target="_blank" label="GitHub" icon={<GitHubLogo/>} />
+            <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInLogo/>} />
         </div>
         <LeftArea />
         <Paper zDepth={3} rounded={false} id="contact-right-area" className="contact-two-papers">
@@ -105,8 +105,8 @@ const PaperArea = () => (
                 <h3>My Email:</h3>
                 <RaisedButton className="contact-button" backgroundColor="#0085E0" labelColor="#FFFFFF" href={links.email} label="Email" icon={<EmailIcon/>} />
                 <h3>Follow Me:</h3>
-                <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={links.github} target="_blank" label="GitHub" icon={<GitHubIcon/>} />
-                <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInIcon/>} />
+                <RaisedButton className="contact-button" backgroundColor="#000000" labelColor="#FFFFFF" href={links.github} target="_blank" label="GitHub" icon={<GitHubLogo/>} />
+                <RaisedButton className="contact-button" backgroundColor="#006097" labelColor="#FFFFFF" href={links.linkedin} target="_blank" label="LinkedIn" icon={<LinkedInLogo/>} />
             </div>
         </Paper>
     </div>
