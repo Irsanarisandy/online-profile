@@ -1,8 +1,8 @@
 import React from 'react';
 import {Avatar, Paper} from 'material-ui';
 import logo from '../assets/thinking.svg';
-import '../styles/about.css';
 import dp from '../assets/dp.jpg';
+import '../styles/about.css';
 
 export default () => (
     <div id="about-content">

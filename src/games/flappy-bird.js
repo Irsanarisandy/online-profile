@@ -7,7 +7,6 @@ function GridCell(props) {
     const style = {
         width: 20,
         height: 20,
-        border: '1px solid',
         backgroundColor: props.cell
     }
 
