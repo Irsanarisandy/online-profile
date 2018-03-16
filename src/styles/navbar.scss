@@ -1,6 +1,9 @@
 .drawer-item {
     text-align: center;
-    text-decoration: none;
+
+    a {
+        text-decoration: none;
+    }
 }
 
 .navbar {

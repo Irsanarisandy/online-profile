@@ -1,7 +1,7 @@
 import React from 'react';
 import Paper from 'material-ui/Paper';
 import logo from '../assets/thinking.svg';
-import FlappyBird from '../games/flappy-bird';
+import FlappyBird from '../games/FlappyBird';
 import '../styles/home.css';
 
 export default () => (

@@ -18,9 +18,8 @@ const NavElements = (props) => {
             );
         case 'DRAWER_MENUITEM':
             return (
-                <Link to={props.link} className="drawer-item">
+                <Link to={props.link}>
                     <MenuItem>{props.icon}{props.label}</MenuItem>
-                    {props.children}
                 </Link>
             );
         case 'DRAWER_ICONBUTTON':
@@ -36,11 +35,8 @@ const NavElements = (props) => {
 
 const RightElements = (props) => (
     <div className="navIcons">
-        {props.links.map((item) => {
-            if (item.label !== undefined) {
-                return (<NavElements type='RIGHT_FLATBUTTON' {...item} />);
-            }
-            return null;
+        {props.links.internal.map((item) => {
+            return (<NavElements type='RIGHT_FLATBUTTON' key={"n_" + item.label} {...item} />);
         })}
         <FlatButton id="clock-nav-full" label={props.localtime} />
     </div>
@@ -50,6 +46,34 @@ export default class CustomNavbar extends React.Component {
     constructor() {
         super();
         this.state = {date: new Date(), open: false};
+        this.links = {
+            internal: [{
+                link: '/',
+                icon: <ActionHome/>,
+                label: 'Home'
+            }, {
+                link: '/about',
+                icon: <ActionSubject/>,
+                label: 'About'
+            }, {
+                link: '/projects',
+                icon: <ActionWork/>,
+                label: 'Projects'
+            }, {
+                link: '/contact',
+                icon: <CommunicationContacts/>,
+                label: 'Contact'
+            }],
+            external: [{
+                link: "https://github.com/irsanarisandy",
+                icon: <GitHubLogo/>,
+                key: "GitHubLogo"
+            }, {
+                link: "https://nz.linkedin.com/in/irsan-arisandy-72008b117",
+                icon: <LinkedInLogo/>,
+                key: "LinkedInLogo"
+            }]
+        };
         this.handleToggle = this.handleToggle.bind(this);
     }
 
@@ -70,32 +94,6 @@ export default class CustomNavbar extends React.Component {
     }
 
     render() {
-        const links = [
-            {
-                link: '/',
-                icon: <ActionHome/>,
-                label: 'Home'
-            }, {
-                link: '/about',
-                icon: <ActionSubject/>,
-                label: 'About'
-            }, {
-                link: '/projects',
-                icon: <ActionWork/>,
-                label: 'Projects'
-            }, {
-                link: '/contact',
-                icon: <CommunicationContacts/>,
-                label: 'Contact'
-            }, {
-                link: "https://github.com/irsanarisandy",
-                icon: <GitHubLogo/>
-            }, {
-                link: "https://nz.linkedin.com/in/irsan-arisandy-72008b117",
-                icon: <LinkedInLogo/>
-            }
-        ];
-
         return (
             <div id="custom-nav">
                 <div id="drawer">
@@ -103,18 +101,12 @@ export default class CustomNavbar extends React.Component {
                         <h3 className="drawer-item">Irsan's Profile</h3>
                         <p className="drawer-item">{this.state.date.toLocaleTimeString()}</p>
                         <Divider />
-                        {links.map((item) => {
-                            if (item.label !== undefined) {
-                                return (<NavElements type='DRAWER_MENUITEM' {...item}><Divider/></NavElements>);
-                            }
-                            return null;
+                        {this.links.internal.map((item) => {
+                            return (<div className="drawer-item" key={"d_" + item.label}><NavElements type='DRAWER_MENUITEM' {...item}/><Divider/></div>);
                         })}
                         <div className="drawer-item">
-                            {links.map((item) => {
-                                if (item.label === undefined) {
-                                    return <NavElements type='DRAWER_ICONBUTTON' {...item} />;
-                                }
-                                return null;
+                            {this.links.external.map((item) => {
+                                return <NavElements type='DRAWER_ICONBUTTON' key={item.key} {...item} />;
                             })}
                         </div>
                         <Divider />
@@ -124,7 +116,7 @@ export default class CustomNavbar extends React.Component {
                 <AppBar id="navbarShort" className="navbar" title="Irsan's Profile" onLeftIconButtonClick={this.handleToggle}
                     iconElementRight={<FlatButton id="clock-nav-short" label={this.state.date.toLocaleTimeString()}/>} />
                 <AppBar id="navbarFull" className="navbar" title="Irsan's Profile" iconElementLeft={<div/>}
-                    iconElementRight={<RightElements links={links} localtime={this.state.date.toLocaleTimeString()}/>} />
+                    iconElementRight={<RightElements links={this.links} localtime={this.state.date.toLocaleTimeString()}/>} />
             </div>
         );
     }
