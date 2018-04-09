@@ -69,7 +69,7 @@ export default class CustomNavbar extends React.Component {
                 icon: <GitHubLogo/>,
                 key: "GitHubLogo"
             }, {
-                link: "https://nz.linkedin.com/in/irsan-arisandy-72008b117",
+                link: "https://www.linkedin.com/in/irsan-arisandy",
                 icon: <LinkedInLogo/>,
                 key: "LinkedInLogo"
             }]
