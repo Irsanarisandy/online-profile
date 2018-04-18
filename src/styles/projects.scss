@@ -1,5 +1,48 @@
 #projects-content {
     .app-header {
-        height: 230px;
+        height: 180px;
+    }
+}
+
+#projects-paper {
+    text-align: center;
+    padding: 20px 30px;
+    margin: 20px 0;
+
+    h3 {
+        margin: 0;
+    }
+
+    p {
+        margin: 10px 0 0;
+        text-align: justify;
+    }
+
+    img {
+        width: 92%;
+        margin: 20px 4%;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px;
+    }
+
+    img:hover {
+        opacity: 0.5;
+    }
+}
+
+@media all and (min-width: 600px) {
+    #projects-paper {
+        img {
+            width: 500px;
+            height: 250px;
+            margin: 20px;
+        }
+    }
+}
+
+@media all and (min-width: 915px) {
+    #projects-paper {
+        p {
+            text-align: center;
+        }
     }
 }

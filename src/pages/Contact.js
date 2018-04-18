@@ -20,6 +20,7 @@ const LeftArea = () => (
                 <Chip className="chips"><Avatar size={32}>S</Avatar>SASS/SCSS</Chip>
                 <Chip className="chips"><Avatar size={32}>L</Avatar>LESS</Chip>
                 <Chip className="chips"><Avatar size={32}>C</Avatar>CSS3</Chip>
+                <Chip className="chips"><Avatar size={32}>R</Avatar>Responsive Web Design</Chip>
             </div>
             <Divider />
             <h4>General Programming</h4>

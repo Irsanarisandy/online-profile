@@ -14,7 +14,7 @@ const MainLayout = () => (
     <div id="main-layout">
         <CustomNavbar />
         <MainRoutes />
-        <footer>Irsan Arisandy &#169; {(new Date()).getFullYear()}</footer>
+        <footer>Irsan Arisandy &#169; {(new Date()).getFullYear()}. Made using React.</footer>
     </div>
 );
 
