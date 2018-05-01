@@ -10,6 +10,16 @@
   #about-paper p {
     text-align: justify; }
 
+#experiences-paper {
+  padding: 20px 30px 10px;
+  margin: 20px 0;
+  display: table; }
+  #experiences-paper h2 {
+    display: table-header-group;
+    text-align: center; }
+  #experiences-paper div {
+    display: table-row; }
+
 @media all and (min-width: 300px) {
   #about-paper img {
     width: 150px !important;

@@ -32,5 +32,29 @@ export default () => (
                 I hope to hear from you!
             </p>
         </Paper>
+        <Paper zDepth={3} rounded={false} id="experiences-paper">
+            <h2>Work Experiences</h2>
+            <div>
+                <h3>Kordia (internship from Summer of Tech, Nov 2017 to Feb 2018):</h3>
+                <ul>
+                    <li>
+                        With the help of my mentors, I was responsible for doing the whole project,
+                        including creating the PostgreSQL database, creating the web-app portal using
+                        Vue and connecting the database with the web-app portal on the back-end side
+                        using Django (Python).
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3>AUT Millennium (internship from MSA, Dec 2015 to Feb 2016):</h3>
+                <ul>
+                    <li>
+                        Made a <a href="https://www.thewellnessshed.co.nz/" target="_blank" rel="noopener noreferrer">professional website</a>,
+                        with my teammates assigned during MSA, for AUT Millennium, using WordPress. I particularly
+                        worked on displaying the contents of the page (i.e. wording and displaying pictures).
+                    </li>
+                </ul>
+            </div>
+        </Paper>
     </div>
 );
