@@ -9,9 +9,11 @@ const LeftArea = () => (
         <div id="skills-area">
             <h3>Skills:</h3>
             <Divider />
-            <h4>Web Development</h4>
+            <h4>Mobile App / Website Development</h4>
             <div className="chip-container">
                 <Chip className="chips"><Avatar size={32}>R</Avatar>React</Chip>
+                <Chip className="chips"><Avatar size={32}>R</Avatar>React Native</Chip>
+                <Chip className="chips"><Avatar size={32}>R</Avatar>Redux</Chip>
                 <Chip className="chips"><Avatar size={32}>V</Avatar>Vue</Chip>
                 <Chip className="chips"><Avatar size={32}>N</Avatar>Node.js</Chip>
                 <Chip className="chips"><Avatar size={32}>T</Avatar>TypeScript</Chip>
@@ -32,9 +34,10 @@ const LeftArea = () => (
             <Divider />
             <h4>Database</h4>
             <div className="chip-container">
+                <Chip className="chips"><Avatar size={32}>M</Avatar>MongoDB</Chip>
                 <Chip className="chips"><Avatar size={32}>P</Avatar>PostgreSQL</Chip>
-                <Chip className="chips"><Avatar size={32}>T</Avatar>T-SQL</Chip>
                 <Chip className="chips"><Avatar size={32}>M</Avatar>MySQL</Chip>
+                <Chip className="chips"><Avatar size={32}>T</Avatar>T-SQL</Chip>
                 <Chip className="chips"><Avatar size={32}>S</Avatar>SQLite</Chip>
             </div>
             <Divider />

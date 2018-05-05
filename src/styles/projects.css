@@ -11,17 +11,25 @@
     margin: 10px 0 0;
     text-align: justify; }
   #projects-paper img {
-    width: 92%;
     margin: 20px 4%;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px; }
   #projects-paper img:hover {
     opacity: 0.5; }
 
+.projects-web img {
+  width: 92%; }
+
+.projects-app img {
+  width: 50%; }
+
 @media all and (min-width: 600px) {
   #projects-paper img {
+    margin: 20px; }
+  .projects-web img {
     width: 500px;
-    height: 250px;
-    margin: 20px; } }
+    height: 250px; }
+  .projects-app img {
+    width: 270px; } }
 
 @media all and (min-width: 915px) {
   #projects-paper p {

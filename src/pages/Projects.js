@@ -5,6 +5,7 @@ import wellness from '../assets/wellness-shed.png';
 import aucs from '../assets/aucs.png';
 import etite from '../assets/app-etite.png';
 import qwiky from '../assets/qwiky.png';
+import currency from '../assets/currency-converter.png';
 import '../styles/projects.css';
 
 export default () => (
@@ -15,7 +16,7 @@ export default () => (
         </Paper>
         <Paper zDepth={3} rounded={false} id="projects-paper">
             <h3>Websites:</h3>
-            <div className="projects">
+            <div className="projects-web">
                 <a href="https://www.thewellnessshed.co.nz/" target="_blank" rel="noopener noreferrer">
                     <img src={wellness} alt="The Wellness Shed" />
                 </a>
@@ -27,6 +28,12 @@ export default () => (
                 </a>
                 <a href="https://badboiz.github.io/frontend/" target="_blank" rel="noopener noreferrer">
                     <img src={qwiky} alt="Qwiky" />
+                </a>
+            </div>
+            <h3>Mobile Applications:</h3>
+            <div className="projects-app">
+                <a href="https://expo.io/@irsanarisandy/currency-converter" target="_blank" rel="noopener noreferrer">
+                    <img src={currency} alt="Currency Converter" />
                 </a>
             </div>
             <h3>Others:</h3>
