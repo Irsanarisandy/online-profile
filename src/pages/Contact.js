@@ -13,9 +13,9 @@ const LeftArea = () => (
             <div className="chip-container">
                 <Chip className="chips"><Avatar size={32}>R</Avatar>React</Chip>
                 <Chip className="chips"><Avatar size={32}>R</Avatar>React Native</Chip>
+                <Chip className="chips"><Avatar size={32}>F</Avatar>Flutter</Chip>
                 <Chip className="chips"><Avatar size={32}>R</Avatar>Redux</Chip>
                 <Chip className="chips"><Avatar size={32}>V</Avatar>Vue</Chip>
-                <Chip className="chips"><Avatar size={32}>N</Avatar>Node.js</Chip>
                 <Chip className="chips"><Avatar size={32}>T</Avatar>TypeScript</Chip>
                 <Chip className="chips"><Avatar size={32}>J</Avatar>JavaScript</Chip>
                 <Chip className="chips"><Avatar size={32}>H</Avatar>HTML5</Chip>
@@ -30,6 +30,7 @@ const LeftArea = () => (
                 <Chip className="chips"><Avatar size={32}>P</Avatar>Python</Chip>
                 <Chip className="chips"><Avatar size={32}>J</Avatar>Java</Chip>
                 <Chip className="chips"><Avatar size={32}>C</Avatar>C#</Chip>
+                <Chip className="chips"><Avatar size={32}>D</Avatar>Dart</Chip>
             </div>
             <Divider />
             <h4>Database</h4>
